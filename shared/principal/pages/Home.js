@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import {View, Platform, StatusBar, Text} from 'react-native';
-
-import {NavigationEvents} from 'react-navigation';
+import {View, Text, StyleSheet} from 'react-native';
 
 export class Home extends Component {
   static navigationOptions = {
@@ -10,21 +8,19 @@ export class Home extends Component {
 
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'flex-end',
-        }}>
-        <Text
-          style={{
-            alignSelf: 'center',
-            textAlign: 'justify',
-            fontSize: 25,
-            marginTop: 250,
-          }}>
-          Home
-        </Text>
+      <View style={style.container}>
+        <Text style={style.text}>Home</Text>
       </View>
     );
   }
 }
+
+const style = StyleSheet.create({
+  container: {flex: 1, alignItems: 'flex-end'},
+  text: {
+    alignSelf: 'center',
+    textAlign: 'justify',
+    fontSize: 25,
+    marginTop: 250,
+  },
+});
