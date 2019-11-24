@@ -1,22 +1,23 @@
+import React, {Component} from 'react';
+import {createSwitchNavigator, createAppContainer} from 'react-navigation';
+
+import {Principal} from './shared/principal';
+
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
+ * Fases do app devem ser adicionadas a este SwitchNavigator
  */
+const AppNavigator = createSwitchNavigator({
+  Principal,
+});
 
-import React from 'react';
-import {View, Text} from 'react-native';
+/**
+ * O `AppContainer` é um componente que contém todas as
+ * páginas que podem ser acessadas por meio de navegação.
+ */
+const AppContainer = createAppContainer(AppNavigator);
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <View>
-        <Text>Criação do projeto</Text>
-      </View>
-    </>
-  );
-};
-
-export default App;
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
+}

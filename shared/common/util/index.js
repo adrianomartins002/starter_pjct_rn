@@ -1,0 +1,1 @@
+export { aplicarEstiloPadraoDeNavegacao } from './stackutil'
